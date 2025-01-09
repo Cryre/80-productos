@@ -1,0 +1,8309 @@
+/* 	Begin Modified Meyer Reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin:0; padding:0; border:0; font-size:100%; font:inherit; vertical-align:baseline;
+}
+/* HTML5 reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+body { line-height:1; letter-spacing:-0.25px; overscroll-behavior:contain;}
+#container:not([style*="zoom"]) { -webkit-text-size-adjust:none;}
+table { border-collapse:collapse; border-spacing:0; }
+th { font-weight:normal; text-align:left; }
+ul { list-style-type:none; }
+.page ol { list-style-position:outside; margin-left:1em; }
+/*.page ol > li, .page  ul > li { text-indent:-1em; padding-left:1em; }*/
+.page .singleline li, .page .singleline li { text-indent:inherit; padding:0; }
+.page ol > li > *, .page ul > li > * { text-indent:initial; padding-left:initial; }
+button { background:transparent;border:none; }
+/*General styles*/
+html, body, #container-wrap, #container { height:100%; }
+#container-wrap { position:absolute; top:0; left:0; }
+#container-wrap, #container { min-height:100%; width:100%; background-color:transparent; z-index:0;}
+b { font-weight:bold; }
+i { font-style:italic; }
+a { color:inherit; text-decoration:inherit; }
+input,select,textarea { font-size:inherit; }
+p:first-child { margin-top:inherit !important; }
+*{ outline:none; animation-fill-mode:both !important; -webkit-animation-fill-mode:both !important; }
+[data-onclick],[onclick],[onrollover],[data-fixed-action],[aria-details],button,.flipwrap{ cursor:pointer; pointer-events:auto; }
+
+body[class^='scaled-none'],body[class*=' scaled-none']{ overflow:auto; }
+body[class^='scaled-width'],body[class*=' scaled-width']{ overflow-x:hidden; }
+body[class^='scaled-height'],body[class*=' scaled-height']{ overflow-y:hidden; }
+body[class^='scaled-best'],body[class*=' scaled-best']{ overflow:hidden; }
+body[class^='scaled-best'][data-page-mode^='c'],body[class*=' scaled-best'][data-page-mode^='c']{ overflow:auto; }
+body[class^='scaled-width'][data-page-mode^='csh'],body[class*=' scaled-width'][data-page-mode^='csh']{ overflow-x:auto; }
+body[class^='scaled-height'][data-page-mode^='csv'],body[class*=' scaled-height'][data-page-mode^='csv']{ overflow-y:auto; }
+body[data-scaled-to='w'] #container{ height:auto; min-height:auto; }
+body[data-scaled-to='w'][data-page-mode^='cs'] #container{ position:absolute; }
+body[data-scaled-to='w'][data-page-mode^='csv'] .pages { padding:0;}
+body.zoomed:not([class*='scaled-']) #container { position:absolute; }
+body[class*='scaled-'] .pages.paper-vertical{ margin:0; }
+body[class^='zoomed'],body[class*=' zoomed']{ overflow-x:auto;overflow-y:auto; }
+body[data-scaled-to] .anythingSlider-in5, body[data-scaled-to] #container > .page {padding:0;margin:0;}
+body[data-scaled-to] #in5footer { position:fixed; bottom:0;}
+/*body[data-scaled-to] * { -webkit-backface-visibility: hidden; }*/ /*fix blurry imgs*/
+html.ios body[class*='scaled-'] #container { position:absolute; top:0; left:0; }
+body.tall-page {overflow-y:auto;}
+.liquid .page.tall-page {height:auto;}
+
+.paper-vertical:after {
+    position:relative;
+    content:' ';
+    display:block;
+    height:50px;
+    clear:both;
+}
+body[data-scaled-to="h"] .paper-vertical:after { display:none; }
+body[data-scaled-to='h'] .paper-horizontal { margin:0; }
+body[data-scaled-to='h'] .paper-horizontal .page { margin-top:0; }
+
+#in5footer,#demoNote,#loadIndicator{
+	min-width:100%;
+	color:#fff;
+	background:#666;
+	font-family:"Trebuchet MS", "Lucida Grande", Helvetica, sans-serif;
+	text-align:center;
+	font-size:15px;
+	box-sizing:border-box; 
+	-moz-box-sizing:border-box;
+}
+
+#loadIndicator{
+	width:100%; padding:6px; position:fixed;
+	top:0; left:0; margin:auto;
+    box-shadow:0 2px 4px rgba(0, 0, 0, 0.3);
+    transition:all 1s ease-in .5s;
+    opacity:1; z-index:99;
+}
+body.loaded #loadIndicator {
+	opacity:0;
+	transform:translateY(-36px);
+	-webkit-transform:translateY(-36px);
+	display:none\9;/*old IE*/
+}
+#loadIndicator img {
+	vertical-align:text-bottom; width:18px;
+}
+html.local #loadIndicator, html.dps #loadIndicator, html.baker #loadIndicator { display:none; }
+
+#in5footer{
+	height:26px; line-height:26px; clear:both; position:relative; margin-top:-26px;
+}
+
+#demoNote {
+    right:0; bottom:0; margin:auto;
+    height:96px !important;
+    padding:36px 10px;
+}
+
+#in5footer a, #demoNote a {
+	text-decoration:none; color:#99ccff;
+}
+svg-img{display:block;position:absolute;}
+.win-safari svg-img{width:100%;}
+svg-img{width:100%\9;}
+.spread-shift { position:absolute; }
+.pageItem, svg { position:absolute; top:0; left:0; }
+svg { overflow:visible; }
+.pageItem {
+	display:block;
+	width:auto !important; height:auto !important;
+	box-sizing:border-box; 
+	-moz-box-sizing:border-box;
+	-webkit-tap-highlight-color:transparent;
+	padding:0;
+}
+.pageItem.hd/*, .pageItem img.hd*/  {
+	-ms-transform:scale(.5);
+    -ms-transform-origin:0 0 0;
+    -webkit-transform:scale(.5);
+    -webkit-transform-origin:0 0 0;
+    transform:scale(.5);
+    transform-origin:0 0 0;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+    .pageItem { image-rendering: -webkit-optimize-contrast; }
+}
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+    .pageItem { image-rendering: optimizeSpeed; }
+}}
+@-moz-document url-prefix() {
+  .pageItem { image-rendering: optimizeQuality; }
+}
+.svg-wrap { width:inherit !important; height:inherit !important; }
+.pageItem p img { vertical-align:text-top; }
+.pageItem p input, .pageItem p button {display:inline;}
+.pageItem p .hidden, .details {visibility:hidden; }
+.pageItem.group[data-ani] { will-change: transform; }
+#colorbox .details { visibility:visible; }
+.details {max-width:550px;font-size:18px;font-family:sans-serif;padding:0 24px;line-height:150%;left:0;right:0;margin:auto;}
+.details p {margin-top:.5em;}
+.details h1,.details h2,.details h3,.details h4,.details h5, .details strong {font-weight:bold;margin:.7em 0;}
+.details em { font-style:italic; }
+.details h1{font-size:150%;} .details h2{font-size:140%;} .details h3{font-size:130%;}
+.details a {color:#0099ff;text-decoration:underline}
+.details a:hover {text-decoration:none;}
+@media (max-device-width:812px){ .details { font-size:32px; } }
+html.ios .iframe-container { overflow:auto; -webkit-overflow-scrolling:touch; }
+iframe[scrolling="auto"] { overflow:auto; }
+iframe[scrolling="yes"] { overflow:scroll; }
+iframe[scrolling="no"] { overflow:hidden; }
+.page-scale-wrap { transform:translateZ(0); }
+.page, .page-scale-wrap {
+	position:relative; float:left; overflow:hidden;
+}
+.pages {
+	list-style:none outside none;
+	padding:0; margin:0 auto ;
+}	
+#container > .page { /*center single page baker*/
+    position:absolute; bottom:0;
+    left:0; right:0; top:0; margin:0 auto;
+}
+body:not(.zoomed,.responsive) #container/*, .page-scale-wrap*/ {/*desktop scaling transitions*/
+	-webkit-transition:-webkit-transform .5s;
+	transition:transform .5s;
+}
+html.multifile body #container { opacity:0; }
+html.multifile body.loaded #container {/*do show scaling of multi-page*/
+	opacity:1;
+	-ms-transition:opacity .1s step-start .1s !important;
+	-webkit-transition:opacity .1s step-start .1s !important;
+	transition:opacity .1s step-start .1s !important;
+}
+html.multifile.fade body.loaded #container {
+	-ms-transition:opacity .6s !important;
+	-webkit-transition:opacity .6s !important;
+	transition:opacity .6s !important;
+}
+
+.textColumn { float:left; }
+.singleline p { line-height:1em !important; position:absolute;width:100%;/*fix webkit display issue*/ }
+p.col-break-before::before {
+	content:'';
+    height:0px; width:100%;
+    display:block; margin-bottom:100%;
+}
+.scroll, .scroll-vert, .scroll-horiz { -webkit-overflow-scrolling:touch; }/*was broken in iOS, turn off if scroll not working*/
+.scroll { overflow:auto; }
+.scroll-vert { overflow-y:auto; overflow-x:hidden; }
+.scroll-horiz { overflow-x:auto; overflow-y:hidden; }
+.scroll-vert::-webkit-scrollbar { -webkit-appearance:none; width:7px; } /*add back scrollbar for webkit*/
+.scroll-vert::-webkit-scrollbar-thumb { border-radius:4px; background-color:rgba(0,0,0,.5); }
+.hidescroll::-webkit-scrollbar { display:none; }
+.hidescroll { -ms-overflow-style:none; overflow:-moz-scrollbars-none;/*old FF*/ }
+.pulltab-left, .pulltab-left > * {
+	-moz-transform:scaleX(-1);
+    -webkit-transform:scaleX(-1);
+    -o-transform:scaleX(-1);
+    transform:scaleX(-1);
+}
+.pulltab-top, .pulltab-top > * {
+	-moz-transform:scaleY(-1);
+    -webkit-transform:scaleY(-1);
+    -o-transform:scaleY(-1);
+    transform:scaleY(-1);
+}
+object, embed, img, a { outline:0; }
+.liquid svg, .liquid .page-scale-wrap { height:100%; width:100%; }
+.noPlugin {
+	width:100%; height:100%; padding:6px;
+	background:#ccc; border:1px solid #666;
+}
+
+.paper-vertical, .paper-horizontal { padding:0 8px; }
+.flip { 
+	overflow:hidden; 
+	-webkit-transition:transform 0.3s ease-in-out;
+	-ms-transition:transform 0.3s ease-in-out;
+	transition:transform 0.3s ease-in-out;
+}
+.turn-page-wrapper{
+	will-change:transform;
+}
+.turn-page {
+	-moz-box-shadow:0px 0px 20px rgba(0,0,0,.7);
+	-webkit-box-shadow:0px 0px 20px rgba(0,0,0,.7);
+    box-shadow:0px 0px 20px rgba(0,0,0,.7);
+}
+.turn-page:not(.activePage) .pageItem[data-ani] { /*fix 2x animation*/
+  	opacity:0;
+  	animation:none !important;
+}
+.paper-horizontal {
+	position:absolute; overflow-y:visible; overflow-x:hidden;
+	margin-top:auto; margin-bottom:auto;
+    top:0; bottom:0;
+}
+
+.paper-vertical .page, .paper-horizontal .page {
+	border:1px solid #bbb;	
+	margin:4px 4px 4px 0;
+	-moz-box-shadow:0px 0px 0px #999;
+	-webkit-box-shadow:0px 0px 5px #999;
+	box-shadow:0px 0px 5px #999;
+}
+
+html[data-dir="rtl"] .paper-horizontal .page { float:right; }
+
+.one-page-scroll .page {
+	border:none;
+	margin:0;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}
+
+.mejs-mediaelement { overflow:hidden; }
+.mejs-container{position:relative;background:none;}
+.mejs-none .mejs-overlay-loading, .mejs-none .mejs-overlay-button, .mejs-none .mejs-controls, .mejs-bigplay .mejs-controls {display:none !important;}
+.mejs-uncon video { object-fit:fill; }
+.mejs-coverfit video { object-fit:cover; }
+.mejs-ccsize-large .mejs-captions-layer {font-size:20px;}
+.mejs-ccsize-xlarge .mejs-captions-layer {font-size:26px;}
+.mejs-video .mejs-controls { transform:translateZ(0); }
+
+.mejs-no-controls { display:none; }
+.vid-scaled .mejs-layers, .vid-scaled .mejs-controls {
+	-webkit-transform:translateZ(0);
+	transform:translateZ(0);
+}
+
+.liquid .page, .page.liquid {
+	position:absolute; width:100%; height:100%;
+	overflow:hidden; display:none;
+}
+
+.page.liquid { /*for multi-file*/
+    display:block;
+}
+.liquid .page.activePage {display:block; }
+.liquid video {width:100%; height:100%; }
+.liquid .slideshow img { object-fit:contain; }
+
+.in5-highlight {
+	background:rgba(255,255,0,.6);
+	mix-blend-mode:multiply;
+	pointer-events:none;
+	animation-name:in5-highlight-in,in5-highlight-in;
+	animation-direction:normal,reverse;
+	animation-delay:3s,3s;
+	animation-duration:.5s,1s;
+	animation-iteration-count:1,1;
+}
+@keyframes in5-highlight-in{ from{ opacity:0 } to { opacity: 1} }
+.hidden { display:none !important; }
+.skip-link-wrap { z-index: 1; position: fixed; }
+[data-reader-only="1"]{
+	transform: translateY(-100vh) !important;
+	z-index:-1;
+}
+[data-reader-only="1"]:focus, [data-reader-only="1"]:active {
+	transform: translateY(0%) !important;
+	z-index:1;
+}
+.mso, .group, .mso > .state { pointer-events:none; }
+.mso > .state * { pointer-events: inherit; }
+.mso > .state.active * { pointer-events:auto; }
+[data-tapstart="1"], [data-useswipe="1"], .group > * { pointer-events:auto; }
+.mso > .state { display:block; opacity:0; width:100% !important; height:inherit !important; position:absolute; z-index:-1; }
+.liquid .mso > .state { height:100% !important; }
+.liquid label > .state {
+    width:100% !important;
+    height:100% !important;
+}
+.mso > .state.active, .mso > .state.transition { display:block; opacity:1; z-index:0; }
+.mso.slideshow.seq, .panzoom, .fauxgroup { overflow:hidden; }
+.panzoom { cursor:move; cursor:-moz-grab; cursor:-webkit-grab; }
+.panzoom > .content {
+	-ms-transform:none;
+    -ms-transform-origin:auto;
+    -webkit-transform:none;
+    -webkit-transform-origin:auto;
+    transform:none;
+    transform-origin:auto;
+}
+.panzoom:not(.dragging) > .content {
+	transition:all .3s;
+}
+
+button .state {width:100% !important; height:100% !important;}
+button .state.btn-on, button .state.btn-down { display:none; }
+html:not(.ios) button.has-on:hover .state.btn-on { display:block; }
+html:not(.ios) button.has-on:hover .state.btn-off, html:not(.ios) button.has-on:hover .state.btn-down { display:none; }
+html:not(.zz) button.has-down .state { pointer-events:none; }
+html:not(.zz) button.has-down:active .state.btn-down { display:block; }
+html:not(.zz) button.has-down:active .state.btn-off, html:not(.zz) button.has-down:active .state.btn-on { display:none; }
+
+.align-vert { display:table; }
+[class^="valign"] {
+	position:relative;
+	display:table-cell;
+	vertical-align:middle;
+	columns:inherit;
+}
+.valign-bottom { vertical-align:bottom; }
+[class^="valign"] > p { position:relative; }
+
+.flex-image, .fill-image { background-repeat:no-repeat; }
+.flex-image { background-size:contain; background-position:center; }
+.fill-image { background-size:cover; }
+
+/*tabs*/
+p.tabs, p.tabs > a { 
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	flex-wrap:wrap;
+}
+p.tabs > a {
+	width:100%;
+	width:-moz-available;
+	width:-webkit-fill-available;
+}
+p.tabs span.tabbed-right { 
+	-ms-flex-grow:1; 
+	-webkit-flex-grow:1; 
+	flex-grow:1; 
+	text-align:right; 
+}
+p.tabs span.tabbed-center { 
+	-ms-flex-grow:50; 
+	-webkit-flex-grow:50; 
+	flex-grow:50; 
+	text-align:center; 
+}
+span.tabbed-standard { text-indent:2ex;padding-left:2ex; }
+p.no-start-indent { text-indent:0px !important; }
+
+/*anchor object styles*/
+.ao-noTextWrap { position:absolute; }
+.ao-alignLeft, .ao-leftFullWidth { float:left; position:relative; }
+.ao-alignRight, .ao-rightFullWidth { float:right; transform-origin:90% 50%; -webkit-transform:90% 50%; /*fix for anchored animation*/ }
+.ao-alignCenter {display:block; margin-left:auto; margin-right:auto;}
+.ao-inlineTable { display:block; }
+.ao-leftFullWidth { padding-right:100%; }
+.ao-rightFullWidth { padding-left:100%; }
+.anchorGroup { position:relative; };
+div.ao-alignLeft:before, div.ao-leftFullWidth:before { content:''; float:left; display:none; }
+div.ao-alignRight:before, div.ao-leftFullRight:before { content:''; float:right; display:none; }
+.anchorGroup > .mso, .anchorGroup > .group { position:relative; }
+
+ul.thumbs {
+	padding:20px; white-space:nowrap; width:1px;
+}
+
+ul.thumbs li { /*Baker index thumbnails*/
+    display:inline; list-style-type:none;
+    margin:0 4px; outline:none;
+    vertical-align:top;
+}
+ul.thumbs > li img { box-shadow:0 0 4px rgba(0, 0, 0, 0.5); }
+.baker audio[controls] {min-width:400px;} /*fix progress bar*/
+
+@media print { 
+	#container,.page-scale-wrap{transform:none !important;}
+	[class*=" btn-form-"]{display:none;}
+}
+
+:-ms-fullscreen .paper-horizontal { width:auto;height:auto;position:initial;margin:auto; }
+:-moz-full-screen .paper-horizontal { width:auto;height:auto;position:initial;margin:auto; }
+:-webkit-full-screen .paper-horizontal { width:auto;height:auto;position:initial;margin:auto; }
+
+:-ms-fullscreen .paper-vertical .page { display:none; }
+:-moz-full-screen .paper-vertical .page { display:none; }
+:-webkit-full-screen .paper-vertical .page { display:none; }
+
+:-ms-fullscreen .paper-horizontal .page { display:none; }
+:-moz-full-screen .paper-horizontal .page { display:none; }
+:-webkit-full-screen .paper-horizontal .page { display:none; }
+
+:-ms-fullscreen .page.activePage { display:block; }
+:-moz-full-screen .page.activePage { display:block; }
+:-webkit-full-screen .page.activePage { display:block; }
+
+:-webkit-full-screen .hideFS { display:none; }
+:-ms-fullscreen .hideFS { display:none; }
+:-moz-full-screen .hideFS { display:none; }
+
+/*CSS Generated from InDesign Styles*/
+
+body, #container-wrap { background:#ededed; }
+:-webkit-full-screen { background:#ededed; }
+#loadIndicator span:after { padding-left:1ex; content:'loading content...'; }
+.page-scale-wrap { width:1920px; height:1080px; background: #fff !important; }
+.paper-vertical { width:1920px; height:100%; }
+.paper-horizontal { width:154400px; height:1092px; }
+@media all and (max-height:1080px) {
+	.paper-horizontal { margin:0;top:0;}
+	#container > .page { margin:0 auto;}/*pos top for webkit+baker*/
+}
+@media all and (max-width:1920px) {
+	.paper-vertical .page, .paper-horizontal .page, .anythingSlider-in5 { padding:0;top:0;border:0; }
+	.paper-vertical, .paper-horizontal { padding:0; }
+}
+
+#item1764 {
+	width:58px !important;
+	height:58px !important;
+	left:1827px !important;
+	top:986px !important;
+}
+
+#item1760 {
+	width:58px !important;
+	height:58px !important;
+	left:37px !important;
+	top:986px !important;
+}
+
+#item941 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item944 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item1193 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item2042 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item2132 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item1219 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item2068 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item2160 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item933 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item935 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item937 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item2105 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item954 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item1293 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item27214 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item27240 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item27245 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item27271 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item27297 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item27324 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item27330 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item27335 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item27340 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item27366 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item27392 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item27418 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item27444 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item27449 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item27559 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item27585 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item27590 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item27616 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item27642 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item27668 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item27673 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item27678 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item27684 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item27710 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item27736 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item27762 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item27788 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item27793 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item27863 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item27888 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item27894 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item27920 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item27946 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item27972 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item27978 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item27983 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item27988 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item28016 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item28042 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item28068 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item28094 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item28099 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item28188 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item28214 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item28219 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item28245 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item28271 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item28298 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item28303 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item28308 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item28314 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item28340 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item28367 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item28393 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item28419 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item28424 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item28495 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item28520 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item28525 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item28551 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item28577 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item28604 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item28609 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item28614 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item28619 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item28645 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item28671 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item28697 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item28723 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item28728 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item28801 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item28826 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item28831 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item28857 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item28883 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item28910 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item28916 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item28921 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item28926 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item28952 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item28978 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item29004 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item29030 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item29035 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item29108 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item29133 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item29138 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item29164 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item29190 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item29216 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item29222 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item29227 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item29232 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item29258 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item29284 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item29310 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item29336 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item29341 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item29451 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item29477 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item29482 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item29508 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item29534 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item29561 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item29566 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item29571 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item29576 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item29603 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item29630 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item29656 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item29683 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item29688 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item29758 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item29783 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item29788 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item29814 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item29840 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item29866 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item29871 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item29876 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item29881 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item29908 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item29934 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item29960 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item29986 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item29991 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item30063 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item30088 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item30093 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item30119 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item30145 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item30172 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item30177 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item30182 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item30187 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item30215 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item30241 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item30267 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item30293 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item30298 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item30372 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item30398 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item30404 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item30430 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item30456 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item30482 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item30488 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item30493 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item30498 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item30524 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item30551 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item30577 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item30603 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item30608 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item30678 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item30704 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item30709 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item30735 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item30761 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item30787 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item30792 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item30798 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item30803 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item30829 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item30856 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item30882 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item30908 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item30913 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item30982 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item31007 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item31013 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item31039 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item31065 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item31091 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item31096 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item31101 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item31106 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item31132 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item31158 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item31186 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item31212 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item31217 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item31289 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item31314 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item31320 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item31346 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item31372 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item31398 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item31404 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item31409 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item31414 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item31440 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item31467 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item31494 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item31520 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item31525 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item31597 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item31622 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item31627 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item31654 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item31680 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item31706 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item31711 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item31716 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item31721 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item31747 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item31773 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item31800 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item31826 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item31831 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item31977 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item32003 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item32009 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item32036 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item32062 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item32088 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item32094 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item32099 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item32104 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item32131 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item32157 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item32184 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item32210 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item32215 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item32286 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item32311 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item32316 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item32342 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item32368 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item32394 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item32400 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item32405 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item32410 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item32436 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item32463 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item32489 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item32515 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item32520 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item32593 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item32619 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item32624 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item32650 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item32676 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item32702 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item32707 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item32713 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item32718 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item32744 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item32770 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item32797 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item32824 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item32829 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item32899 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item32924 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item32930 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item32956 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item32982 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item33008 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item33013 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item33019 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item33024 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item33050 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item33076 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item33102 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item33128 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item33133 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item33204 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item33229 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item33234 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item33261 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item33287 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item33313 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item33318 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item33323 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item33329 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item33355 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item33382 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item33408 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item33434 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item33439 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item33512 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item33537 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item33542 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item33568 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item33594 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item33620 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item33625 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item33630 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item33636 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item33662 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item33688 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item33714 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item33740 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item33746 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item33822 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item33847 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item33852 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item33878 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item33904 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item33930 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item33935 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item33940 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item33945 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item33972 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item33998 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item34024 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item34050 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item34055 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item34125 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item34150 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item34155 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item34181 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item34207 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item34233 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item34238 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item34243 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item34248 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item34275 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item34301 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item34328 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item34354 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item34360 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item34431 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item34456 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item34461 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item34487 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item34513 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item34539 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item34544 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item34549 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item34555 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item34581 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item34608 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item34634 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item34660 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item34665 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item34735 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item34761 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item34766 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item34792 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item34818 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item34844 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item34849 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item34854 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item34859 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item34886 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item34913 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item34940 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item34967 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item34972 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item35043 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item35069 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item35074 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item35100 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item35126 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item35152 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item35158 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item35163 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item35168 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item35194 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item35222 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item35248 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item35275 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item35280 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item35350 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item35375 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item35381 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item35407 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item35433 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item35459 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item35464 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item35470 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item35475 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item35501 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item35527 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item35554 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item35580 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item35585 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item35656 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item35681 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item35687 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item35713 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item35739 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item35766 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item35772 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item35777 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item35782 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item35808 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item35834 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item35861 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item35887 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item35892 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item35965 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item35990 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item35995 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item36022 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item36048 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item36075 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item36080 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item36085 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item36090 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item36116 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item36142 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item36168 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item36195 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item36200 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item36270 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item36295 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item36300 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item36327 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item36353 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item36379 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item36384 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item36389 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item36394 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item36420 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item36446 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item36472 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item36499 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item36504 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item36572 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item36597 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item36602 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item36629 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item36656 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item36683 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item36688 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item36693 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item36698 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item36724 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item36750 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item36776 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item36803 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item36808 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item37031 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item37058 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item37063 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item37089 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item37115 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item37141 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item37146 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item37151 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item37156 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item37182 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item37209 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item37235 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item37261 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item37266 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item37337 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item37364 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item37369 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item37395 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item37421 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item37447 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item37452 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item37457 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item37462 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item37488 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item37515 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item37541 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item37567 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item37572 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item37643 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item37668 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item37674 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item37700 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item37726 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item37752 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item37757 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item37763 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item37768 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item37794 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item37820 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item37847 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item37873 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item37878 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item37950 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item37975 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item37981 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item38007 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item38033 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item38059 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item38064 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item38069 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item38074 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item38100 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item38126 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item38154 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item38180 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item38186 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item38257 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item38282 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item38287 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item38314 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item38340 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item38366 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item38372 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item38377 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item38382 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item38408 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item38434 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item38461 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item38488 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item38494 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item38564 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item38590 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item38595 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item38622 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item38648 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item38674 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item38679 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item38684 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item38689 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item38715 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item38741 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item38767 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item38794 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item38799 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item38870 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item38895 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item38900 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item38926 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item38953 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item38979 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item38984 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item38989 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item38994 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item39020 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item39047 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item39074 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item39100 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item39106 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item39177 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item39202 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item39207 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item39233 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item39260 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item39286 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item39291 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item39296 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item39301 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item39328 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item39354 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item39380 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item39406 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item39412 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item39485 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item39510 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item39515 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item39541 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item39568 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item39594 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item39599 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item39604 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item39610 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item39636 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item39662 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item39688 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item39714 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item39720 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item39790 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item39815 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item39820 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item39846 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item39872 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item39899 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item39904 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item39909 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item39914 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item39940 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item39966 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item39992 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item40018 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item40023 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item40095 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item40120 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item40125 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item40151 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item40177 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item40204 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item40210 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item40215 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item40220 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item40246 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item40273 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item40299 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item40325 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item40330 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item40404 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item40429 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item40434 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item40460 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item40486 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item40512 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item40518 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item40524 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item40530 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item40556 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item40582 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item40608 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item40634 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item40639 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item40713 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item40738 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item40743 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item40769 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item40796 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item40822 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item40828 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item40833 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item40838 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item40864 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item40890 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item40916 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item40942 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item40947 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item41017 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item41043 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item41048 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item41074 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item41100 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item41126 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item41131 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item41137 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item41142 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item41168 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item41195 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item41221 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item41247 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item41252 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item41323 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item41348 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item41354 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item41380 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item41406 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item41432 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item41437 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item41444 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item41449 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item41475 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item41501 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item41527 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item41554 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item41559 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item41630 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item41655 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item41660 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item41686 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item41712 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item41739 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item41744 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item41749 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item41755 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item41781 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item41807 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item41833 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item41859 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item41864 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item41937 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item41962 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item41967 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item41993 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item42020 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item42046 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item42051 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item42056 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item42062 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item42088 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item42114 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item42140 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item42166 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item42171 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item42244 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item42269 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item42274 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item42300 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item42326 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item42352 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item42357 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item42362 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item42367 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item42394 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item42420 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item42446 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item42472 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item42477 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item42550 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item42575 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item42580 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item42606 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item42632 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item42658 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item42663 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item42668 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item42673 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item42700 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item42726 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item42752 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item42778 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item42783 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item42855 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item42880 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item42885 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item42912 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item42938 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item42964 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item42969 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item42974 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item42979 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item43005 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item43032 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item43058 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item43085 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item43090 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item43160 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item43186 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item43191 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item43217 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item43243 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item43269 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item43274 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item43279 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item43284 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item43310 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item43338 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item43364 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item43390 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item43396 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item43464 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item43490 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item43495 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item43521 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item43547 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item43573 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item43578 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item43583 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item43588 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item43614 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item43642 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item43668 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item43695 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item43700 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item43773 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item43798 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item43804 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item43830 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item43857 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item43883 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item43888 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item43893 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item43898 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item43924 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item43950 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item43977 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item44003 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item44008 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item44079 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item44105 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item44111 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item44137 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item44163 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item44189 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item44194 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item44199 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item44205 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item44231 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item44257 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item44284 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item44310 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item44315 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item44386 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item44411 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item44416 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item44443 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item44469 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item44495 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item44500 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item44506 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item44511 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item44537 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item44563 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item44589 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item44616 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item44621 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item44691 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item44716 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item44721 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item44748 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item44774 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item44800 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item44806 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item44811 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item44816 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item44842 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item44868 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item44894 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item44921 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item44926 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item44998 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item45023 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item45028 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item45054 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item45081 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item45107 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item45112 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item45117 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item45122 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item45148 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item45174 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item45200 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item45227 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item45232 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item45304 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item45329 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item45334 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item45360 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item45388 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item45414 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item45419 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item45424 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item45429 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item45457 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item45483 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item45509 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item45535 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item45541 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item45612 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item45637 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item45642 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item45668 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item45695 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item45721 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item45726 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item45731 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item45736 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item45762 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item45788 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item45814 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item45840 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item45846 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item45916 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item45941 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item45947 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item45973 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item45999 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item46026 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item46031 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item46036 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item46041 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item46067 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item46093 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item46119 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item46145 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item46150 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item46224 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item46249 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item46255 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item46281 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item46307 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item46334 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item46339 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item46344 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item46349 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item46375 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item46401 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item46427 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item46453 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item46458 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item46531 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item46556 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item46561 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item46587 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item46613 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item46639 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item46645 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item46650 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item46655 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item46682 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item46708 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item46734 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item46760 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item46765 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item48198 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item48224 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item48229 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item48255 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item48282 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item48308 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item48313 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item48319 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item48324 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item48350 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item48376 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item48402 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item48428 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item48433 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item48506 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item48532 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item48537 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item48563 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item48589 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item48615 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item48620 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item48626 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item48631 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item48657 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item48683 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item48709 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item48735 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item48741 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item48814 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item48839 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item48844 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item48870 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item48896 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item48922 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item48927 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item48932 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item48939 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item48965 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item48991 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item49017 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item49043 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item49048 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item49120 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item49145 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item49150 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item49176 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item49202 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item49228 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item49233 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item49238 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item49244 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item49270 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item49296 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item49323 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item49349 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item49354 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item49425 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item49450 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item49455 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item49482 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item49508 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item49534 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item49539 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item49544 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item49549 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item49576 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item49602 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item49628 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item49654 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item49659 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item49731 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item49756 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item49762 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item49788 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item49814 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item49840 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item49845 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item49850 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item49856 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item49883 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item49909 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item49935 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item49961 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item49966 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item50038 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item50063 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item50068 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item50094 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item50120 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item50146 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item50151 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item50156 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item50161 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item50188 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item50215 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item50242 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item50268 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item50273 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item50343 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item50369 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item50374 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item50400 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item50426 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item50452 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item50457 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item50463 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item50468 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item50494 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item50521 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item50547 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item50573 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item50578 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item50650 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item50676 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item50681 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item50707 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item50733 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item50759 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item50764 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item50769 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item50774 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item50800 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item50827 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item50854 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item50880 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item50885 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item50956 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item50981 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item50988 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item51014 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item51040 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item51067 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item51072 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item51077 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item51082 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item51108 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item51134 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item51161 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item51187 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item51192 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item51264 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item51289 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item51295 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item51322 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item51348 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item51374 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item51379 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item51384 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item51389 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item51415 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item51441 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item51468 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item51494 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item51499 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item51567 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item51592 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item51598 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item51625 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item51651 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item51677 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item51682 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item51687 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item51692 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item51718 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item51744 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item51770 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item51797 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item51802 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item51875 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item51900 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item51905 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item51932 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item51959 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item51985 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item51990 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item51995 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item52001 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item52027 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item52053 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item52079 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item52106 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item52111 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item52183 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item52209 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item52214 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item52240 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item52267 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item52293 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item52298 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item52303 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item52308 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item52335 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item52361 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item52387 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item52413 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item52419 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item52489 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item52514 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item52519 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item52545 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item52572 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item52598 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item52603 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item52608 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item52613 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item52639 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item52665 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item52691 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item52717 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item52723 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
+
+#item52794 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item52819 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item52824 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item52850 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item52878 {
+	width:690px !important;
+	height:710px !important;
+	left:1100px !important;
+	top:256px !important;
+}
+
+#item52904 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item52909 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item52914 {
+	width:34px !important;
+	height:34px !important;
+	left:1730px !important;
+	top:286px !important;
+}
+
+#item52919 {
+	width:390px !important;
+	height:80px !important;
+	left:1258px !important;
+	top:500px !important;
+}
+
+#item52945 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:600px !important;
+}
+
+#item52971 {
+	width:390px !important;
+	height:80px !important;
+	left:1260px !important;
+	top:699px !important;
+}
+
+#item52997 {
+	width:185px !important;
+	height:64px !important;
+	left:915px !important;
+	top:980px !important;
+}
+
+#item53023 {
+	width:34px !important;
+	height:34px !important;
+	left:1680px !important;
+	top:447px !important;
+}
+
+#item53030 {
+	width:619px !important;
+	height:171px !important;
+	left:1137px !important;
+	top:552px !important;
+}
